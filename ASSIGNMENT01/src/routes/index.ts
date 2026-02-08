@@ -1,4 +1,7 @@
 import {Router} from 'express';
+import { getAboutMe } from '../controllers/aboutMeController';
+import { getMyProfile } from '../controllers/myProfilleController';
+import { getProjects } from '../controllers/projectsController';
 
 const appRouter = Router();
 
@@ -7,5 +10,10 @@ const appRouter = Router();
 appRouter.get("/test", (_req, res) => {
     res.json({message: "Welcome, API is working fine!"});
 });
+
+appRouter.get("/aboutMe", getAboutMe);
+appRouter.get("/myProfile", getMyProfile);
+appRouter.get("/projects", getProjects);
+
 
 export default appRouter;
