@@ -4,10 +4,10 @@ A REST style Portfolio API Assignment built with **TypeScript and Express JS**.
 This API returns JSON endpoints for a personal portfolio: profile, about, projects, and contact messages (in-memory).
 
 ## Live API Link
-- Live URL: <PASTE YOUR LIVE DEPLOYED LINK HERE>
+- Live URL: https://comp2068jsframeworks-dz7x.onrender.com
 
 ## GitHub Repo Link 
-- Repo: <PASTE YOUR GITHUB REPO LINK HERE>
+- Repo: https://github.com/Umaid-dev/COMP2068JSFrameworks.git
 
 # Endpoints : 
 
@@ -16,6 +16,7 @@ Returns basic profile info.
 
 Example:
 - URL: `http://localhost:3000/api/myProfile`
+- URL: `https://comp2068jsframeworks-dz7x.onrender.com/api/myProfile` 
 
 ### GET /api/aboutMe
 Returns about me info.
