@@ -4,7 +4,7 @@ import { logger } from './middleware/logger';
 
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // built in  Middleware to parse JSON bodies
 app.use(express.json());
