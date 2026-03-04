@@ -20,6 +20,16 @@ export default function Navbar() {
             Sushi
           </Link>
         </li>
+        <li>
+          <Link href="/register" className="hover:text-gray-300">
+            Register
+          </Link>
+        </li>
+        <li>
+          <Link href="/login" className="hover:text-gray-300">
+            Login
+          </Link>
+        </li>
       </ul>
     </nav>
   );
