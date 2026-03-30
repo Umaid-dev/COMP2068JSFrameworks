@@ -5,8 +5,12 @@ import cors from "cors";
 
 const app = express();
 const port = 5050;
-app.use(cors());
-
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL,
+    credentials: true,
+  })
+);
 // middleware
 app.use(express.json());
 
