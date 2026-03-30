@@ -1,12 +1,12 @@
 import Link from "next/link";
 
-export const dynamic = "force-dynamic";
-
 async function getTasks() {
-  const res = await fetch("http://localhost:5050/api/tasks"); //my local host was showing 5050 instead of 5000 thats why i written 5050.
+  const res = await fetch("http://localhost:3001/api/tasks", {
+    cache: "no-store",
+  });
 
   if (!res.ok) {
-    throw new Error("Failed to fetch tasks");
+    throw new Error("failed to fetch");
   }
 
   return res.json();
