@@ -1,8 +1,11 @@
 import express from "express";
 import { connectToDatabase } from "./services/database.service";
 import taskRouter from "./routes/task.routes";
+import cors from "cors";
+
 const app = express();
 const port = 5050;
+app.use(cors());
 
 // middleware
 app.use(express.json());
