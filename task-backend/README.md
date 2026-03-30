@@ -31,3 +31,16 @@ It provides full CRUD functionality for managing tasks.
 ## Environment Variables
 
 Create a `.env` file:
+
+
+## Running Locally
+
+```bash
+npm install
+npm run dev
+
+DB_CONN_STRING=mongodb+srv://umaidn11_db_user:Umaid123@umaidcluster.mngwqni.mongodb.net/?retryWrites=true&w=majority&appName=UmaidCluster
+DB_NAME=assignment2
+COLLECTION_NAME=to-do
+CLIENT_URL=http://localhost:3000
+
