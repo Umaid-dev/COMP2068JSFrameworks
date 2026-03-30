@@ -1,12 +1,10 @@
 import Link from "next/link";
 
 async function getTasks() {
-  const res = await fetch("http://localhost:3001/api/tasks", {
-    cache: "no-store",
-  });
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/tasks`); 
 
   if (!res.ok) {
-    throw new Error("failed to fetch");
+    throw new Error("Failed to fetch tasks");
   }
 
   return res.json();
@@ -25,31 +23,31 @@ export default async function TasksPage() {
   const tasks: Task[] = await getTasks();
 
   return (
-    <main className="p-6">
-      <h1 className="text-2xl font-bold mb-4">All Tasks</h1>
+    <main className="container">
+      <h1 className="title">All Tasks</h1>
 
       <Link
         href="/tasks/create"
-        className="bg-green-600 text-white px-3 py-2 rounded mb-4 inline-block"
+        className="button-success"
       >
         Add New Task
       </Link>
 
       {tasks.length === 0 ? (
-        <p>No tasks found.</p>
+        <p className="no-data">No tasks found.</p>
       ) : (
-        <ul>
+        <ul className="task-list">
           {tasks.map((task) => (
-            <li key={task._id} className="border p-4 mb-3 rounded">
-              <h2 className="text-xl font-semibold">{task.title}</h2>
-              <p>{task.description}</p>
-              <p>Status: {task.status}</p>
-              <p>Due Date: {task.dueDate}</p>
-              <p>Tags: {task.tags.join(", ")}</p>
+            <li key={task._id} className="task-card">
+              <h2 className="task-title">{task.title}</h2>
+              <p className="task-text">{task.description}</p>
+              <p className="task-text">Status: {task.status}</p>
+              <p className="task-text">Due Date: {task.dueDate}</p>
+              <p className="task-text">Tags: {task.tags.join(", ")}</p>
 
               <Link
                 href={`/tasks/${task._id}`}
-                className="text-blue-600 underline"
+                className="link-primary"
               >
                 View Details
               </Link>

@@ -24,11 +24,7 @@ export default function CreateTask() {
 
     setErrors(newErrors);
 
-    if (Object.keys(newErrors).length === 0) {
-      return true;
-    } else {
-      return false;
-    }
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
@@ -62,55 +58,55 @@ export default function CreateTask() {
   };
 
   return (
-    <main className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Task Details</h1>
+    <main className="container">
+      <h1 className="title">Task Details</h1>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <fieldset>
+      <form onSubmit={handleSubmit} className="form">
+        <fieldset className="form-group">
           <label htmlFor="title">Task Title: *</label>
           <input
             id="title"
             name="title"
-            className="border rounded px-3 py-2 w-full"
+            className="input"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
-          {errors.title && <p className="text-red-600">{errors.title}</p>}
+          {errors.title && <p className="error">{errors.title}</p>}
         </fieldset>
 
-        <fieldset>
+        <fieldset className="form-group">
           <label htmlFor="description">Description: *</label>
           <textarea
             id="description"
             name="description"
-            className="border rounded px-3 py-2 w-full"
+            className="input"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
           {errors.description && (
-            <p className="text-red-600">{errors.description}</p>
+            <p className="error">{errors.description}</p>
           )}
         </fieldset>
 
-        <fieldset>
+        <fieldset className="form-group">
           <label htmlFor="dueDate">Due Date: *</label>
           <input
             id="dueDate"
             name="dueDate"
             type="date"
-            className="border rounded px-3 py-2 w-full"
+            className="input"
             value={dueDate}
             onChange={(e) => setDueDate(e.target.value)}
           />
-          {errors.dueDate && <p className="text-red-600">{errors.dueDate}</p>}
+          {errors.dueDate && <p className="error">{errors.dueDate}</p>}
         </fieldset>
 
-        <fieldset>
+        <fieldset className="form-group">
           <label htmlFor="status">Status: *</label>
           <select
             id="status"
             name="status"
-            className="border rounded px-3 py-2 w-full"
+            className="input"
             value={status}
             onChange={(e) => setStatus(e.target.value)}
           >
@@ -119,15 +115,15 @@ export default function CreateTask() {
             <option value="In Progress">In Progress</option>
             <option value="Completed">Completed</option>
           </select>
-          {errors.status && <p className="text-red-600">{errors.status}</p>}
+          {errors.status && <p className="error">{errors.status}</p>}
         </fieldset>
 
-        <fieldset>
+        <fieldset className="form-group">
           <label htmlFor="tags">Tags:</label>
           <input
             id="tags"
             name="tags"
-            className="border rounded px-3 py-2 w-full"
+            className="input"
             placeholder="school, assignment, urgent"
             value={tags}
             onChange={(e) => setTags(e.target.value)}
@@ -136,7 +132,7 @@ export default function CreateTask() {
 
         <button
           type="submit"
-          className="bg-blue-700 text-white px-4 py-2 rounded"
+          className="button-primary"
         >
           Save
         </button>

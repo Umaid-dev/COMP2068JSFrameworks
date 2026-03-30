@@ -1,6 +1,6 @@
 export async function GET() {
   try {
-    const res: Response = await fetch("http://localhost:5050/api/tasks", { //While running it was showing 5050 thats why is used it instead of 5000 
+    const res: Response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/tasks`, { //While running it was showing 5050 thats why is used it instead of 5000 
       cache: "no-store",
     });
 
@@ -23,7 +23,7 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
 
-    const res: Response = await fetch("http://localhost:5050/api/tasks", {
+    const res: Response = await fetch( `${process.env.NEXT_PUBLIC_SERVER_URL}/api/tasks`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
