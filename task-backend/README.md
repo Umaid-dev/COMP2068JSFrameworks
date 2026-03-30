@@ -1,6 +1,6 @@
 # Task Tracker API
 
-Last Updated: March 30, 2026
+https://comp-2068-js-frameworks-ruddy.vercel.app/api/tasks
 
 ## Description
 This is a RESTful API built using Node.js, Express, and MongoDB.  
@@ -44,3 +44,6 @@ DB_NAME=assignment2
 COLLECTION_NAME=to-do
 CLIENT_URL=http://localhost:3000
 
+## API Documentation (Swagger)
+
+https://comp-2068-js-frameworks-ruddy.vercel.app/api-docs
